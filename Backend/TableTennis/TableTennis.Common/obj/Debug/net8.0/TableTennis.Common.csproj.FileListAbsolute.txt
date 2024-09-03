@@ -1,0 +1,12 @@
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\bin\Debug\net8.0\TableTennis.Common.deps.json
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\bin\Debug\net8.0\TableTennis.Common.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\bin\Debug\net8.0\TableTennis.Common.pdb
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\TableTennis.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\TableTennis.Common.AssemblyInfoInputs.cache
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\TableTennis.Common.AssemblyInfo.cs
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\TableTennis.Common.csproj.CoreCompileInputs.cache
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\TableTennis.Common.sourcelink.json
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\TableTennis.Common.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\refint\TableTennis.Common.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\TableTennis.Common.pdb
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Common\obj\Debug\net8.0\ref\TableTennis.Common.dll

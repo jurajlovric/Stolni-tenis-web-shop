@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.1.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TableTennis.Common\TableTennis.Common.csproj" />
+    <ProjectReference Include="..\TableTennis.Repository.Common\TableTennis.Repository.Common.csproj" />
+    <ProjectReference Include="..\TableTennis.Repository\TableTennis.Repository.csproj" />
+    <ProjectReference Include="..\TableTennis.Service.Common\TableTennis.Service.Common.csproj" />
+    <ProjectReference Include="..\TableTennis.Service\TableTennis.Service.csproj" />
+    <ProjectReference Include="..\TableTnnis.Model\TableTennis.Model.csproj" />
+  </ItemGroup>
+
+</Project>

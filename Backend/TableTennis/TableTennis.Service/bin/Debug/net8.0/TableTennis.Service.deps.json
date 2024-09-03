@@ -1,0 +1,64 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "TableTennis.Service/1.0.0": {
+        "dependencies": {
+          "TableTennis.Model": "1.0.0",
+          "TableTennis.Repository.Common": "1.0.0",
+          "TableTennis.Service.Common": "1.0.0"
+        },
+        "runtime": {
+          "TableTennis.Service.dll": {}
+        }
+      },
+      "TableTennis.Model/1.0.0": {
+        "runtime": {
+          "TableTennis.Model.dll": {}
+        }
+      },
+      "TableTennis.Repository.Common/1.0.0": {
+        "dependencies": {
+          "TableTennis.Model": "1.0.0"
+        },
+        "runtime": {
+          "TableTennis.Repository.Common.dll": {}
+        }
+      },
+      "TableTennis.Service.Common/1.0.0": {
+        "dependencies": {
+          "TableTennis.Model": "1.0.0"
+        },
+        "runtime": {
+          "TableTennis.Service.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TableTennis.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TableTennis.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TableTennis.Repository.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TableTennis.Service.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

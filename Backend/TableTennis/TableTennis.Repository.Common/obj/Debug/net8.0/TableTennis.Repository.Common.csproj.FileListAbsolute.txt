@@ -1,0 +1,16 @@
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\bin\Debug\net8.0\TableTennis.Repository.Common.deps.json
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\bin\Debug\net8.0\TableTennis.Repository.Common.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\bin\Debug\net8.0\TableTennis.Repository.Common.pdb
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\bin\Debug\net8.0\TableTennis.Model.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\bin\Debug\net8.0\TableTennis.Model.pdb
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTennis.Repository.Common.csproj.AssemblyReference.cache
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTennis.Repository.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTennis.Repository.Common.AssemblyInfoInputs.cache
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTennis.Repository.Common.AssemblyInfo.cs
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTennis.Repository.Common.csproj.CoreCompileInputs.cache
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTennis.Repository.Common.sourcelink.json
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTen.DA47BD04.Up2Date
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTennis.Repository.Common.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\refint\TableTennis.Repository.Common.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\TableTennis.Repository.Common.pdb
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Repository.Common\obj\Debug\net8.0\ref\TableTennis.Repository.Common.dll
