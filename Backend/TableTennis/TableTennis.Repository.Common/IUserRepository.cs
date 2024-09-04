@@ -1,12 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using TableTennis.Model;
 
 namespace TableTennis.Repository.Common
 {
-    internal class IUserRepository
+    public interface IUserRepository
     {
+        Task<User> RegisterUserAsync(User user);
+        Task<Guid?> GetRoleIdByUsernameAsync(string username);
+        Task<User> GetUserByEmailAsync(string email);
     }
 }

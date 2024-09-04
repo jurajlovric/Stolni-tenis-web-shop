@@ -18,3 +18,5 @@ D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Service\obj\Debug\net8.0\T
 D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Service\obj\Debug\net8.0\refint\TableTennis.Service.dll
 D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Service\obj\Debug\net8.0\TableTennis.Service.pdb
 D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Service\obj\Debug\net8.0\ref\TableTennis.Service.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Service\bin\Debug\net8.0\DTO.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis.Service\bin\Debug\net8.0\DTO.pdb

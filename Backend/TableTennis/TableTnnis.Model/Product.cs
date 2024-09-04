@@ -1,4 +1,6 @@
-﻿namespace TableTennis.Model
+﻿using System;
+
+namespace TableTennis.Model
 {
     public class Product
     {
@@ -7,7 +9,7 @@
         public string Description { get; set; }
         public decimal Price { get; set; }
         public Guid CategoryId { get; set; }
+        public string CategoryName { get; set; } // Novo polje za ime kategorije
         public string ImageUrl { get; set; }
-        public Category Category { get; set; }
     }
 }

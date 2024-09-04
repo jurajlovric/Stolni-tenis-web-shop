@@ -9,16 +9,15 @@
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.1.0" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj" />
     <ProjectReference Include="..\TableTennis.Common\TableTennis.Common.csproj" />
+    <ProjectReference Include="..\TableTennis.Mapper\TableTennis.Mapper.csproj" />
     <ProjectReference Include="..\TableTennis.Repository.Common\TableTennis.Repository.Common.csproj" />
     <ProjectReference Include="..\TableTennis.Repository\TableTennis.Repository.csproj" />
     <ProjectReference Include="..\TableTennis.Service.Common\TableTennis.Service.Common.csproj" />

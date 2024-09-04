@@ -55,3 +55,8 @@ D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\bin\Debug\net8.0\TableTenn
 D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\bin\Debug\net8.0\TableTennis.Repository.pdb
 D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\bin\Debug\net8.0\TableTennis.Service.pdb
 D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\obj\Debug\net8.0\TableTennis.WebApi.MvcApplicationPartsAssemblyInfo.cs
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\bin\Debug\net8.0\AutoMapper.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\bin\Debug\net8.0\DTO.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\bin\Debug\net8.0\TableTennis.Mapper.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\bin\Debug\net8.0\DTO.pdb
+D:\StolniTenisWebShop\Backend\TableTennis\TableTennis\bin\Debug\net8.0\TableTennis.Mapper.pdb

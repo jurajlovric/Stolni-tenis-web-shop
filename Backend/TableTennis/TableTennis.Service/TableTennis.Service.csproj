@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj" />
     <ProjectReference Include="..\TableTennis.Repository.Common\TableTennis.Repository.Common.csproj" />
     <ProjectReference Include="..\TableTennis.Service.Common\TableTennis.Service.Common.csproj" />
     <ProjectReference Include="..\TableTnnis.Model\TableTennis.Model.csproj" />
