@@ -1,0 +1,12 @@
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\TableTennis.Model.GeneratedMSBuildEditorConfig.editorconfig
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\TableTennis.Model.AssemblyInfoInputs.cache
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\TableTennis.Model.AssemblyInfo.cs
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\TableTennis.Model.csproj.CoreCompileInputs.cache
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\TableTennis.Model.sourcelink.json
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\bin\Debug\net8.0\TableTennis.Model.deps.json
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\bin\Debug\net8.0\TableTennis.Model.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\bin\Debug\net8.0\TableTennis.Model.pdb
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\TableTennis.Model.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\refint\TableTennis.Model.dll
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\TableTennis.Model.pdb
+D:\StolniTenisWebShop\Backend\TableTennis\TableTnnis.Model\obj\Debug\net8.0\ref\TableTennis.Model.dll

@@ -1,0 +1,364 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service\\TableTennis.Service.csproj": {}
+  },
+  "projects": {
+    "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\Lovric\\.nuget\\packages\\",
+        "outputPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lovric\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository.Common\\TableTennis.Repository.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository.Common\\TableTennis.Repository.Common.csproj",
+        "projectName": "TableTennis.Repository.Common",
+        "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository.Common\\TableTennis.Repository.Common.csproj",
+        "packagesPath": "C:\\Users\\Lovric\\.nuget\\packages\\",
+        "outputPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lovric\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj"
+              },
+              "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj": {
+                "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service.Common\\TableTennis.Service.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service.Common\\TableTennis.Service.Common.csproj",
+        "projectName": "TableTennis.Service.Common",
+        "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service.Common\\TableTennis.Service.Common.csproj",
+        "packagesPath": "C:\\Users\\Lovric\\.nuget\\packages\\",
+        "outputPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lovric\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj"
+              },
+              "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj": {
+                "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service\\TableTennis.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service\\TableTennis.Service.csproj",
+        "projectName": "TableTennis.Service",
+        "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service\\TableTennis.Service.csproj",
+        "packagesPath": "C:\\Users\\Lovric\\.nuget\\packages\\",
+        "outputPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lovric\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj": {
+                "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\DTO\\DTO.csproj"
+              },
+              "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository.Common\\TableTennis.Repository.Common.csproj": {
+                "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository.Common\\TableTennis.Repository.Common.csproj"
+              },
+              "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service.Common\\TableTennis.Service.Common.csproj": {
+                "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service.Common\\TableTennis.Service.Common.csproj"
+              },
+              "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj": {
+                "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj",
+        "projectName": "TableTennis.Model",
+        "projectPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\TableTennis.Model.csproj",
+        "packagesPath": "C:\\Users\\Lovric\\.nuget\\packages\\",
+        "outputPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTnnis.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lovric\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
