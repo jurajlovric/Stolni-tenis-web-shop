@@ -33,16 +33,26 @@ namespace TableTennis.WebApi.Controllers
         }
 
         [HttpPost]
+        [HttpPost]
         public async Task<ActionResult> AddOrder([FromBody] Order order)
         {
-            // Provjera da su osnovni podaci ispravni
-            if (order.OrderItems == null || order.OrderItems.Count == 0)
+            Console.WriteLine($"Primljeni userId: {order.UserId}");
+
+            if (order.UserId == Guid.Empty)
             {
-                return BadRequest("Order must contain at least one item.");
+                return BadRequest("Neispravan ID korisnika.");
             }
 
-            await _orderService.AddOrderAsync(order);
-            return Ok();
+            try
+            {
+                await _orderService.AddOrderAsync(order);
+                return Ok("Narudžba je uspješno kreirana.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
+
     }
 }

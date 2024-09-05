@@ -6,19 +6,19 @@ namespace DTO.UserModel
     public class RegisterPost
     {
         [Required]
-        public string Username { get; set; }        // Korisničko ime
+        public string Username { get; set; }       
 
         [Required]
         [EmailAddress]
-        public string Email { get; set; }           // Email korisnika
+        public string Email { get; set; } 
 
         [Required]
         [MinLength(6)]
-        public string Password { get; set; }        // Lozinka korisnika
+        public string Password { get; set; } 
 
         [Required]
-        public Guid RoleId { get; set; }            // ID uloge korisnika (npr. admin, user)
+        public Guid RoleId { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;  // Datum kreiranja (postavlja se automatski)
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

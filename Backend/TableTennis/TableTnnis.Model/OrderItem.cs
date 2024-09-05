@@ -9,6 +9,6 @@ namespace TableTennis.Model
         public Guid ProductId { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
-        public string? ProductName { get; set; } // Postavite kao nullable, jer nije obavezno prilikom POST zahtjeva
+        public string? ProductName { get; set; }
     }
 }

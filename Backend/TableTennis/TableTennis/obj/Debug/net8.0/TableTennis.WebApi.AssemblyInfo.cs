@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TableTennis.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fa114e6949a85875500b282e30c7ef2a2af1ca2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3c059a0f65a129936f4aab9de066255a4e78da0")]
 [assembly: System.Reflection.AssemblyProductAttribute("TableTennis.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TableTennis.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

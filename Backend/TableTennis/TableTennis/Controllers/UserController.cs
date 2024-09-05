@@ -1,10 +1,9 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
 using TableTennis.Service.Common;
-using DTO.UserModel;
 using TableTennis.Model;
+using DTO.UserModel;
 
 namespace TableTennis.WebApi.Controllers
 {
@@ -13,62 +12,47 @@ namespace TableTennis.WebApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        private readonly IMapper _mapper;
 
-        public UserController(IUserService userService, IMapper mapper)
+        public UserController(IUserService userService)
         {
             _userService = userService;
-            _mapper = mapper;
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<TokenData>> RegisterUser([FromBody] RegisterPost registerPost)
+        public async Task<ActionResult<User>> RegisterUser([FromBody] RegisterPost registerPost)
         {
             try
             {
-                // Provjerite da su svi potrebni podaci prisutni
-                if (string.IsNullOrEmpty(registerPost.Password))
+                var user = new User
                 {
-                    return BadRequest(new { message = "Lozinka ne smije biti prazna." });
-                }
+                    Username = registerPost.Username,
+                    Email = registerPost.Email,
+                    Password = registerPost.Password,
+                    RoleId = registerPost.RoleId
+                };
 
-                // Mapiranje RegisterPost DTO-a u User model
-                var user = _mapper.Map<User>(registerPost);
-
-                // Registracija korisnika putem servisa
                 var registeredUser = await _userService.RegisterUserAsync(user);
-
-                // Mapiranje User modela u TokenData DTO za povrat klijentu
-                var tokenData = _mapper.Map<TokenData>(registeredUser);
-
-                return Ok(tokenData);
+                return Ok(registeredUser);
             }
             catch (Exception ex)
             {
-                // Prikaz greške ako korisnik već postoji ili dođe do greške prilikom registracije
                 return BadRequest(new { message = ex.Message });
             }
         }
 
-        // POST: api/user/login
         [HttpPost("login")]
-        public async Task<ActionResult<TokenData>> LoginUser([FromBody] LoginPost loginPost)
+        public async Task<ActionResult<User>> LoginUser([FromBody] LoginPost loginPost)
         {
             try
             {
-                // Prijava korisnika putem servisa
                 var user = await _userService.LoginAsync(loginPost.Email, loginPost.Password);
-
-                // Mapiranje User modela u TokenData DTO za povrat klijentu
-                var tokenData = _mapper.Map<TokenData>(user);
-
-                return Ok(tokenData);
+                return Ok(user);
             }
             catch (Exception ex)
             {
-                // Prikaz greške ako prijava nije uspješna (pogrešan email ili lozinka)
                 return Unauthorized(new { message = ex.Message });
             }
         }
+
     }
 }

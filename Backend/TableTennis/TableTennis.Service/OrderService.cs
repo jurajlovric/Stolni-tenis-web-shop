@@ -10,60 +10,75 @@ namespace TableTennis.Service
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly IProductRepository _productRepository; // Dodana ovisnost o ProductRepository
+        private readonly IProductRepository _productRepository;
+        private readonly IUserRepository _userRepository;
 
-        public OrderService(IOrderRepository orderRepository, IProductRepository productRepository)
+        public OrderService(IOrderRepository orderRepository, IProductRepository productRepository, IUserRepository userRepository)
         {
             _orderRepository = orderRepository;
             _productRepository = productRepository;
+            _userRepository = userRepository;
         }
 
-        // Dodaj novu narudžbu
         public async Task AddOrderAsync(Order order)
         {
-            // Generiranje jedinstvenih ID-ova za narudžbu i stavke
+            if (order.UserId == Guid.Empty)
+            {
+                throw new Exception("Neispravan ID korisnika.");
+            }
+
+            Console.WriteLine($"Provjera korisnika s ID-jem: {order.UserId}");
+            var user = await _userRepository.GetUserByIdAsync(order.UserId);
+            if (user == null)
+            {
+                throw new Exception($"Korisnik s ID-jem {order.UserId} ne postoji.");
+            }
+
             order.OrderId = Guid.NewGuid();
+            order.OrderDate = DateTime.UtcNow;
+            order.Status = "u obradi";
+
+            order.TotalAmount = CalculateTotalAmount(order.OrderItems);
 
             foreach (var item in order.OrderItems)
             {
                 item.OrderItemId = Guid.NewGuid();
-                item.OrderId = order.OrderId; // Postavljanje OrderId za svaku stavku narudžbe
+                item.OrderId = order.OrderId;
 
-                // Dohvati cijenu proizvoda iz baze pomoću ProductRepository
                 var product = await _productRepository.GetProductByIdAsync(item.ProductId);
                 if (product == null)
                 {
                     throw new Exception($"Proizvod s ID-jem {item.ProductId} ne postoji.");
                 }
 
-                item.Price = product.Price; // Postavljanje cijene proizvoda iz baze
+                item.Price = product.Price;
+                if (item.Quantity <= 0)
+                {
+                    throw new Exception("Količina proizvoda mora biti veća od nule.");
+                }
             }
 
-            // Postavljanje datuma narudžbe na trenutni datum i vrijeme
-            order.OrderDate = DateTime.UtcNow;
-
-            // Izračun ukupnog iznosa narudžbe
-            order.TotalAmount = CalculateTotalAmount(order.OrderItems);
-
-            // Postavljanje statusa narudžbe
-            order.Status = "u obradi";
-
-            await _orderRepository.AddOrderAsync(order);
+            try
+            {
+                await _orderRepository.AddOrderAsync(order);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Greška pri dodavanju narudžbe: {ex.Message}");
+                throw new Exception("Došlo je do greške pri kreiranju narudžbe. Molimo pokušajte ponovo.");
+            }
         }
 
-        // Dohvati sve narudžbe
         public async Task<IEnumerable<Order>> GetAllOrdersAsync()
         {
             return await _orderRepository.GetAllOrdersAsync();
         }
 
-        // Dohvati narudžbe po ID-u korisnika
         public async Task<IEnumerable<Order>> GetOrdersByUserIdAsync(Guid userId)
         {
             return await _orderRepository.GetOrdersByUserIdAsync(userId);
         }
 
-        // Pomoćna metoda za izračun ukupnog iznosa narudžbe
         private decimal CalculateTotalAmount(IEnumerable<OrderItem> orderItems)
         {
             decimal total = 0;

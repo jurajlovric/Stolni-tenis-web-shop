@@ -17,7 +17,6 @@ namespace TableTennis.Repository
             _connectionString = connectionString;
         }
 
-        // Dohvati sve kategorije
         public async Task<IEnumerable<Category>> GetAllCategoriesAsync()
         {
             var categories = new List<Category>();
@@ -47,7 +46,6 @@ namespace TableTennis.Repository
             return categories;
         }
 
-        // Dohvati kategoriju po ID-u
         public async Task<Category> GetCategoryByIdAsync(Guid id)
         {
             Category category = null;
@@ -79,7 +77,6 @@ namespace TableTennis.Repository
             return category;
         }
 
-        // Dodaj novu kategoriju
         public async Task AddCategoryAsync(Category category)
         {
             using (var conn = new NpgsqlConnection(_connectionString))
@@ -97,7 +94,6 @@ namespace TableTennis.Repository
             }
         }
 
-        // Ažuriraj postojeću kategoriju
         public async Task UpdateCategoryAsync(Category category)
         {
             using (var conn = new NpgsqlConnection(_connectionString))
@@ -115,7 +111,6 @@ namespace TableTennis.Repository
             }
         }
 
-        // Izbriši kategoriju po ID-u
         public async Task DeleteCategoryAsync(Guid id)
         {
             using (var conn = new NpgsqlConnection(_connectionString))

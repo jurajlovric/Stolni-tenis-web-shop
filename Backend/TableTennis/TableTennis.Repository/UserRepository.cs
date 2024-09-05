@@ -14,8 +14,42 @@ namespace TableTennis.Repository
         {
             _connectionString = connectionString;
         }
+        public async Task<User> GetUserByIdAsync(Guid userId)
+        {
+            using (var conn = new NpgsqlConnection(_connectionString))
+            {
+                await conn.OpenAsync();
 
-        // Registracija novog korisnika
+                var query = @"
+                    SELECT user_id, username, email, password, created_at, role_id
+                    FROM ""User""
+                    WHERE user_id = @UserId;";
+
+                using (var command = new NpgsqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@UserId", userId);
+
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            return new User
+                            {
+                                UserId = reader.GetGuid(reader.GetOrdinal("user_id")),
+                                Username = reader.GetString(reader.GetOrdinal("username")),
+                                Email = reader.GetString(reader.GetOrdinal("email")),
+                                Password = reader.GetString(reader.GetOrdinal("password")),
+                                CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at")),
+                                RoleId = reader.IsDBNull(reader.GetOrdinal("role_id")) ? (Guid?)null : reader.GetGuid(reader.GetOrdinal("role_id"))
+                            };
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public async Task<User> RegisterUserAsync(User user)
         {
             await using var connection = new NpgsqlConnection(_connectionString);
@@ -53,7 +87,6 @@ namespace TableTennis.Repository
             return null;
         }
 
-        // Dohvati RoleId prema Username
         public async Task<Guid?> GetRoleIdByUsernameAsync(string username)
         {
             await using var connection = new NpgsqlConnection(_connectionString);
@@ -71,35 +104,38 @@ namespace TableTennis.Repository
             return roleId;
         }
 
-        // Dohvati korisnika prema emailu
         public async Task<User> GetUserByEmailAsync(string email)
         {
-            await using var connection = new NpgsqlConnection(_connectionString);
-            await connection.OpenAsync();
-
-            var query = @"
-                SELECT * 
-                FROM ""User""
-                WHERE email = @Email;";
-
-            await using var command = new NpgsqlCommand(query, connection);
-            command.Parameters.AddWithValue("@Email", email);
-
-            await using var reader = await command.ExecuteReaderAsync();
-            if (await reader.ReadAsync())
+            using (var conn = new NpgsqlConnection(_connectionString))
             {
-                return new User
-                {
-                    UserId = reader.GetGuid(reader.GetOrdinal("user_id")),
-                    Username = reader.GetString(reader.GetOrdinal("username")),
-                    Email = reader.GetString(reader.GetOrdinal("email")),
-                    Password = reader.GetString(reader.GetOrdinal("password")),
-                    CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at")),
-                    RoleId = reader.GetGuid(reader.GetOrdinal("role_id"))
-                };
-            }
+                await conn.OpenAsync();
+                var query = @"
+            SELECT user_id, username, email, password, created_at, role_id
+            FROM ""User""
+            WHERE email = @Email;";
 
+                using (var command = new NpgsqlCommand(query, conn))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            return new User
+                            {
+                                UserId = reader.GetGuid(reader.GetOrdinal("user_id")),
+                                Username = reader.GetString(reader.GetOrdinal("username")),
+                                Email = reader.GetString(reader.GetOrdinal("email")),
+                                Password = reader.GetString(reader.GetOrdinal("password")),
+                                CreatedAt = reader.GetDateTime(reader.GetOrdinal("created_at")),
+                                RoleId = reader.IsDBNull(reader.GetOrdinal("role_id")) ? (Guid?)null : reader.GetGuid(reader.GetOrdinal("role_id"))
+                            };
+                        }
+                    }
+                }
+            }
             return null;
         }
+
     }
 }

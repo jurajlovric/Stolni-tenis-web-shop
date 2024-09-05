@@ -17,7 +17,6 @@ namespace TableTennis.Repository
             _connectionString = connectionString;
         }
 
-        // Dodaj novu narudžbu s pripadajućim stavkama
         public async Task AddOrderAsync(Order order)
         {
             using (var conn = new NpgsqlConnection(_connectionString))
@@ -27,7 +26,6 @@ namespace TableTennis.Repository
                 {
                     try
                     {
-                        // Umetanje narudžbe
                         var orderCommand = new NpgsqlCommand(
                             "INSERT INTO \"Order\" (order_id, user_id, order_date, status, total_amount) " +
                             "VALUES (@OrderId, @UserId, @OrderDate, @Status, @TotalAmount)", conn, transaction);
@@ -40,7 +38,6 @@ namespace TableTennis.Repository
 
                         await orderCommand.ExecuteNonQueryAsync();
 
-                        // Umetanje stavki narudžbe
                         foreach (var item in order.OrderItems)
                         {
                             var itemCommand = new NpgsqlCommand(
@@ -67,7 +64,6 @@ namespace TableTennis.Repository
             }
         }
 
-        // Dohvati sve narudžbe s pripadajućim stavkama
         public async Task<IEnumerable<Order>> GetAllOrdersAsync()
         {
             var orders = new List<Order>();
@@ -105,7 +101,6 @@ namespace TableTennis.Repository
                             orders.Add(order);
                         }
 
-                        // Ako postoje stavke, dodaj ih u narudžbu
                         if (!reader.IsDBNull(reader.GetOrdinal("order_item_id")))
                         {
                             order.OrderItems.Add(new OrderItem
@@ -125,7 +120,6 @@ namespace TableTennis.Repository
             return orders;
         }
 
-        // Dohvati sve narudžbe po ID-u korisnika
         public async Task<IEnumerable<Order>> GetOrdersByUserIdAsync(Guid userId)
         {
             var orders = new List<Order>();
@@ -167,7 +161,6 @@ namespace TableTennis.Repository
                                 orders.Add(order);
                             }
 
-                            // Ako postoje stavke, dodaj ih u narudžbu
                             if (!reader.IsDBNull(reader.GetOrdinal("order_item_id")))
                             {
                                 order.OrderItems.Add(new OrderItem

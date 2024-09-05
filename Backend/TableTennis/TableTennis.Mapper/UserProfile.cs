@@ -8,19 +8,11 @@ namespace TableTennis.Mapper
     {
         public UserProfile()
         {
-            // Mapiranje iz RegisterPost DTO-a u User model
             CreateMap<RegisterPost, User>()
-                .ForMember(dest => dest.UserId, opt => opt.Ignore()) // ID se generira u servisu
-                .ForMember(dest => dest.CreatedAt, opt => opt.Ignore()) // Datum se postavlja u servisu
-                .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password)); // Osigurava da se password mapira ispravno
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => Guid.NewGuid()))
+                .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.UtcNow)); 
 
-            // Mapiranje iz User modela u TokenData DTO
-            CreateMap<User, TokenData>()
-                .ForMember(dest => dest.Role, opt => opt.Ignore()); // Uloga se popunjava dodatno
-
-            // Mapiranje iz LoginPost DTO-a u UserLogin ili sličan model (ako postoji)
-            // Ako imate poseban model za login podatke, možete prilagoditi mapiranje prema potrebi
-            CreateMap<LoginPost, User>();
+            CreateMap<User, TokenData>();
         }
     }
 }
