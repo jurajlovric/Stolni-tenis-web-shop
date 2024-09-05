@@ -49,6 +49,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
+// Dodajte CORS politiku
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 // Konfiguracija Autofaca za registraciju servisa i repozitorija
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
 {
@@ -70,18 +81,6 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
     containerBuilder.RegisterInstance(connectionString).As<string>();
 });
 
-// Dodavanje CORS politike
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAllOrigins",
-        policyBuilder =>
-        {
-            policyBuilder.AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader();
-        });
-});
-
 var app = builder.Build();
 
 // Middleware konfiguracija
@@ -91,7 +90,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TableTennis API v1"));
 }
 
+// Aktivacija CORS-a prije definiranja ruta
 app.UseCors("AllowAllOrigins");
+
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
