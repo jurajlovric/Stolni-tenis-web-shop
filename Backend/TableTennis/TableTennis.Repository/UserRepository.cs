@@ -47,11 +47,9 @@ namespace TableTennis.Repository
                 }
             }
 
-            // Ako korisnik nije pronađen, vraćamo null
             return null;
         }
 
-        // Registracija novog korisnika
         public async Task<User> RegisterUserAsync(User user)
         {
             await using var connection = new NpgsqlConnection(_connectionString);
@@ -89,7 +87,6 @@ namespace TableTennis.Repository
             return null;
         }
 
-        // Dohvati RoleId prema Username
         public async Task<Guid?> GetRoleIdByUsernameAsync(string username)
         {
             await using var connection = new NpgsqlConnection(_connectionString);
@@ -107,8 +104,6 @@ namespace TableTennis.Repository
             return roleId;
         }
 
-        // Dohvati korisnika prema emailu
-        // UserRepository.cs
         public async Task<User> GetUserByEmailAsync(string email)
         {
             using (var conn = new NpgsqlConnection(_connectionString))

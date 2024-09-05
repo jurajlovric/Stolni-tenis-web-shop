@@ -44,17 +44,38 @@ namespace TableTennis.WebApi.Controllers
         }
 
         [HttpPost]
+        [HttpPost]
         public async Task<ActionResult> AddProduct([FromBody] Product product)
         {
+            Console.WriteLine($"Primljeni podaci: Name={product.Name}, Price={product.Price}, CategoryId={product.CategoryId}, ImageUrl={product.ImageUrl}");
+
             // Provjera je li CategoryId ispravno postavljen
             if (product.CategoryId == Guid.Empty)
             {
+                Console.WriteLine("CategoryId nije ispravno postavljen.");
                 return BadRequest("CategoryId is required.");
             }
 
-            await _productService.AddProductAsync(product);
-            return CreatedAtAction(nameof(GetProductById), new { id = product.ProductId }, product);
+            // Provjera ostalih podataka
+            if (string.IsNullOrEmpty(product.Name) || product.Price <= 0)
+            {
+                Console.WriteLine("Ime proizvoda ili cijena nisu ispravni.");
+                return BadRequest("Ime proizvoda i cijena moraju biti ispravni.");
+            }
+
+            try
+            {
+                await _productService.AddProductAsync(product);
+                return CreatedAtAction(nameof(GetProductById), new { id = product.ProductId }, product);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Greška pri dodavanju proizvoda: {ex.Message}");
+                return BadRequest(new { message = ex.Message });
+            }
         }
+
+
 
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateProduct(Guid id, [FromBody] Product product)

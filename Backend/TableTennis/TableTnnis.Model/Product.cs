@@ -9,7 +9,7 @@ namespace TableTennis.Model
         public string Description { get; set; }
         public decimal Price { get; set; }
         public Guid CategoryId { get; set; }
-        public string CategoryName { get; set; } // Novo polje za ime kategorije
+        public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
     }
 }

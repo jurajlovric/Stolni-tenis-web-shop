@@ -8,8 +8,8 @@ namespace TableTennis.Model
         public Guid OrderId { get; set; }
         public Guid UserId { get; set; }
         public DateTime OrderDate { get; set; }
-        public string Status { get; set; } = "u obradi"; // Postavite default vrijednost
+        public string Status { get; set; } = "u obradi";
         public decimal TotalAmount { get; set; }
-        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>(); // Postavite praznu listu kao default
+        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }

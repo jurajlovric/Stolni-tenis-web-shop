@@ -100,7 +100,7 @@ const CartPage = () => {
             <div key={item.productId} style={styles.itemRow}>
               <div style={styles.itemDetails}>
                 <span>{item.productName}</span>
-                <span>{item.price} kn</span>
+                <span>{item.price} eur</span> {/* Promijenjeno iz "kn" u "eur" */}
               </div>
               <input
                 type="number"
@@ -114,7 +114,7 @@ const CartPage = () => {
               </button>
             </div>
           ))}
-          <div style={styles.total}>Ukupno: {totalAmount.toFixed(2)} kn</div>
+          <div style={styles.total}>Ukupno: {totalAmount.toFixed(2)} eur</div> {/* Promijenjeno iz "kn" u "eur" */}
           <button style={styles.button} onClick={handleOrder}>
             Naruči
           </button>

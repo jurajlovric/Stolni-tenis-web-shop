@@ -86,7 +86,7 @@ const ProductDetails = () => {
       <div style={styles.details}>
         <h2>{product.name}</h2>
         <p>{product.description}</p>
-        <p>Cijena: {product.price} kn</p>
+        <p>Cijena: {product.price} eur</p>
       </div>
       <div>
         <input

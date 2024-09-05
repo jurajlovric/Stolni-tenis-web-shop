@@ -25,8 +25,11 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await loginUser(email, password);
       if (response) {
-        setUser(response);
-        localStorage.setItem('user', JSON.stringify(response));
+        // Dodajemo naziv uloge dohvaćen s backend-a
+        const roleName = await getRoleNameById(response.roleId); // Pretpostavimo da postoji funkcija koja dohvaća naziv uloge
+        const userWithRole = { ...response, roleName }; // Dodajemo naziv uloge korisničkom objektu
+        setUser(userWithRole);
+        localStorage.setItem('user', JSON.stringify(userWithRole));
       } else {
         throw new Error('Prijava nije uspjela');
       }
@@ -39,8 +42,10 @@ export const AuthProvider = ({ children }) => {
   const registerUserHandler = async (username, email, password, roleId) => {
     try {
       const response = await registerUser(username, email, password, roleId);
-      setUser(response);
-      localStorage.setItem('user', JSON.stringify(response));
+      const roleName = await getRoleNameById(response.roleId); // Pretpostavimo da postoji funkcija koja dohvaća naziv uloge
+      const userWithRole = { ...response, roleName };
+      setUser(userWithRole);
+      localStorage.setItem('user', JSON.stringify(userWithRole));
     } catch (error) {
       console.error('Greška pri registraciji:', error.message);
       throw error;
@@ -51,6 +56,24 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     localStorage.removeItem('user');
   };
+
+  // Dodajte funkciju koja dohvaća naziv uloge na temelju roleId
+const getRoleNameById = async (roleId) => {
+  try {
+    const response = await fetch(`/api/roles/${roleId}`); // Prilagodite URL prema vašoj API strukturi
+    if (response.ok) {
+      const data = await response.json();
+      return data.roleName; // Pretpostavka da API vraća objekt s roleName
+    } else {
+      console.error('Failed to fetch role name:', response.statusText);
+      return null;
+    }
+  } catch (error) {
+    console.error('Error fetching role name:', error);
+    return null;
+  }
+};
+
 
   return (
     <AuthContext.Provider

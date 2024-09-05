@@ -1,48 +1,58 @@
 // src/pages/Home.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const Home = () => {
-  // Stilizacija početne stranice
-  const styles = {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '80vh',
-      textAlign: 'center',
-    },
-    heading: {
-      fontSize: '2.5rem',
-      marginBottom: '20px',
-      color: '#333',
-    },
-    button: {
-      padding: '10px 20px',
-      fontSize: '1rem',
-      borderRadius: '5px',
-      border: 'none',
-      backgroundColor: '#007bff',
-      color: '#fff',
-      cursor: 'pointer',
-      transition: 'background-color 0.3s',
-    },
-    buttonHover: {
-      backgroundColor: '#0056b3',
-    },
+  const navigate = useNavigate();
+  const { user } = useAuth();
+
+  // Provjerava je li korisnik admin na temelju roleId
+  const isAdmin = user?.roleId === '3af2c54a-6fe7-4b32-be9c-b6991fab5bdb';
+
+  // Stilizacija za gumb
+  const buttonStyle = {
+    padding: '10px 20px',
+    margin: '10px',
+    border: 'none',
+    borderRadius: '5px',
+    backgroundColor: '#007bff',
+    color: '#fff',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s',
+  };
+
+  const adminButtonStyle = {
+    ...buttonStyle,
+    backgroundColor: '#28a745',
   };
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>Dobro došli na stolno tenisku stranicu!</h1>
-      <button
-        style={styles.button}
-        onMouseOver={(e) => (e.target.style.backgroundColor = styles.buttonHover.backgroundColor)}
-        onMouseOut={(e) => (e.target.style.backgroundColor = '#007bff')}
-        onClick={() => window.location.href = '/products'} // Navigacija na stranicu proizvoda
-      >
-        Pogledajte proizvode
-      </button>
+    <div style={{ textAlign: 'center', padding: '40px' }}>
+      <h1>Dobro došli u trgovinu stolnoteniske opreme</h1>
+      <p>
+        Ovdje možete pronaći najbolji izbor stolnoteniske opreme za sve razine
+        igrača. Od reketa, stolova, loptica do torbi i dodatne opreme. Pronađite
+        sve što vam je potrebno za vašu igru!
+      </p>
+      <div style={{ marginTop: '20px' }}>
+        <button style={buttonStyle} onClick={() => navigate('/products')}>
+          Pregledajte Proizvode
+        </button>
+        <button style={buttonStyle} onClick={() => navigate('/cart')}>
+          Košarica
+        </button>
+
+        {/* Prikaz gumba za admina ako je korisnik admin */}
+        {isAdmin && (
+          <button
+            style={adminButtonStyle}
+            onClick={() => navigate('/admindashboard')}
+          >
+            Admin Dashboard
+          </button>
+        )}
+      </div>
     </div>
   );
 };

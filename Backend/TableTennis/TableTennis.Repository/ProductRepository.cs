@@ -13,7 +13,6 @@ namespace TableTennis.Repository
             _connectionString = connectionString;
         }
 
-        // Dohvati sve proizvode
         public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
             var products = new List<Product>();
@@ -24,7 +23,7 @@ namespace TableTennis.Repository
                 var commandText = @"
                     SELECT p.product_id, p.name, p.description, p.price, p.category_id, c.name AS category_name, p.image_url
                     FROM ""Product"" p
-                    JOIN ""Category"" c ON p.category_id = c.category_id;"; // Dodan JOIN za dohvaćanje naziva kategorije
+                    JOIN ""Category"" c ON p.category_id = c.category_id;";
                 using (var command = new NpgsqlCommand(commandText, conn))
                 using (var reader = await command.ExecuteReaderAsync())
                 {
@@ -39,7 +38,7 @@ namespace TableTennis.Repository
                                 : reader.GetString(reader.GetOrdinal("description")),
                             Price = reader.GetDecimal(reader.GetOrdinal("price")),
                             CategoryId = reader.GetGuid(reader.GetOrdinal("category_id")),
-                            CategoryName = reader.GetString(reader.GetOrdinal("category_name")), // Povlači ime kategorije
+                            CategoryName = reader.GetString(reader.GetOrdinal("category_name")),
                             ImageUrl = reader.IsDBNull(reader.GetOrdinal("image_url"))
                                 ? null
                                 : reader.GetString(reader.GetOrdinal("image_url"))
@@ -52,7 +51,6 @@ namespace TableTennis.Repository
             return products;
         }
 
-        // Dohvati proizvod po ID-u
         public async Task<Product> GetProductByIdAsync(Guid id)
         {
             Product product = null;
@@ -64,7 +62,7 @@ namespace TableTennis.Repository
                     SELECT p.product_id, p.name, p.description, p.price, p.category_id, c.name AS category_name, p.image_url
                     FROM ""Product"" p
                     JOIN ""Category"" c ON p.category_id = c.category_id
-                    WHERE p.product_id = @id;"; // Dodan JOIN za dohvaćanje naziva kategorije
+                    WHERE p.product_id = @id;";
                 using (var command = new NpgsqlCommand(commandText, conn))
                 {
                     command.Parameters.AddWithValue("@id", id);
@@ -81,7 +79,7 @@ namespace TableTennis.Repository
                                     : reader.GetString(reader.GetOrdinal("description")),
                                 Price = reader.GetDecimal(reader.GetOrdinal("price")),
                                 CategoryId = reader.GetGuid(reader.GetOrdinal("category_id")),
-                                CategoryName = reader.GetString(reader.GetOrdinal("category_name")), // Povlači ime kategorije
+                                CategoryName = reader.GetString(reader.GetOrdinal("category_name")),
                                 ImageUrl = reader.IsDBNull(reader.GetOrdinal("image_url"))
                                     ? null
                                     : reader.GetString(reader.GetOrdinal("image_url"))
@@ -94,7 +92,6 @@ namespace TableTennis.Repository
             return product;
         }
 
-        // Dodaj novi proizvod
         public async Task AddProductAsync(Product product)
         {
             using (var conn = new NpgsqlConnection(_connectionString))
@@ -115,7 +112,6 @@ namespace TableTennis.Repository
             }
         }
 
-        // Ažuriraj postojeći proizvod
         public async Task UpdateProductAsync(Product product)
         {
             using (var conn = new NpgsqlConnection(_connectionString))
@@ -136,7 +132,6 @@ namespace TableTennis.Repository
             }
         }
 
-        // Izbriši proizvod po ID-u
         public async Task DeleteProductAsync(Guid id)
         {
             using (var conn = new NpgsqlConnection(_connectionString))

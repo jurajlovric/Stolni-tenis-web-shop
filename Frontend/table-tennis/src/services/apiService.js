@@ -65,3 +65,44 @@ export const createOrder = async (orderData) => {
     throw new Error(error.response?.data?.message || 'Greška pri kreiranju narudžbe. Pokušajte ponovo.');
   }
 };
+
+export const getOrders = async () => {
+  try {
+    const response = await api.get('/order'); // Promijenjeno iz '/orders' u '/order'
+    return response.data;
+  } catch (error) {
+    console.error('Greška pri dohvaćanju narudžbi:', error);
+    throw error;
+  }
+};
+
+export const addProduct = async (productData) => {
+  const response = await api.post('/product', productData);
+  return response.data;
+};
+
+export const getCategories = async () => {
+  const response = await api.get('/category'); // Pretpostavlja se da je ruta za dohvaćanje kategorija '/category'
+  return response.data;
+};
+
+export const deleteProduct = async (productId) => {
+  try {
+    const response = await api.delete(`/product/${productId}`);
+    return response.data;
+  } catch (error) {
+    console.error('Greška pri brisanju proizvoda:', error.response?.data?.message || error.message);
+    throw new Error('Greška pri brisanju proizvoda. Pokušajte ponovo.');
+  }
+};
+
+
+export const updateProduct = async (productId, productData) => {
+  try {
+    const response = await api.put(`/product/${productId}`, productData);
+    return response.data;
+  } catch (error) {
+    console.error('Greška pri ažuriranju proizvoda:', error.response?.data || error.message);
+    throw new Error('Greška pri ažuriranju proizvoda. Pokušajte ponovo.');
+  }
+};

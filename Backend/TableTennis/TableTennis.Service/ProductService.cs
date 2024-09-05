@@ -16,32 +16,27 @@ namespace TableTennis.Service
             _productRepository = productRepository;
         }
 
-        // Dohvati sve proizvode
         public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
             return await _productRepository.GetAllProductsAsync();
         }
 
-        // Dohvati proizvod po ID-u
         public async Task<Product> GetProductByIdAsync(Guid id)
         {
             return await _productRepository.GetProductByIdAsync(id);
         }
 
-        // Dodaj novi proizvod
         public async Task AddProductAsync(Product product)
         {
-            product.ProductId = Guid.NewGuid(); // Generira novi GUID za proizvod
+            product.ProductId = Guid.NewGuid();
             await _productRepository.AddProductAsync(product);
         }
 
-        // Ažuriraj postojeći proizvod
         public async Task UpdateProductAsync(Product product)
         {
             await _productRepository.UpdateProductAsync(product);
         }
 
-        // Izbriši proizvod po ID-u
         public async Task DeleteProductAsync(Guid id)
         {
             await _productRepository.DeleteProductAsync(id);

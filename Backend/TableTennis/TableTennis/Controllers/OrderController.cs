@@ -36,7 +36,6 @@ namespace TableTennis.WebApi.Controllers
         [HttpPost]
         public async Task<ActionResult> AddOrder([FromBody] Order order)
         {
-            // Logiranje vrijednosti userId
             Console.WriteLine($"Primljeni userId: {order.UserId}");
 
             if (order.UserId == Guid.Empty)
