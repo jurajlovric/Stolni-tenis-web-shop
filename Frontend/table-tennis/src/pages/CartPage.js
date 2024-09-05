@@ -1,17 +1,24 @@
 // src/pages/CartPage.js
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../context/CartContext'; // Koristite custom hook useCart
 import { useNavigate } from 'react-router-dom';
 import { createOrder } from '../services/apiService';
+import { useAuth } from '../context/AuthContext'; // Koristimo useAuth umjesto AuthContext
 
 const CartPage = () => {
   const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart(); // Koristite custom hook
+  const { user } = useAuth(); // Dohvat prijavljenog korisnika pomoću useAuth
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleOrder = async () => {
     try {
+      if (!user || !user.userId) {
+        throw new Error('Korisnik nije prijavljen ili nema valjan ID.');
+      }
+
       const orderData = {
+        userId: user.userId, // Prosljeđivanje ID-ja prijavljenog korisnika
         orderItems: cartItems.map((item) => ({
           productId: item.productId,
           quantity: item.quantity,
@@ -24,7 +31,7 @@ const CartPage = () => {
       clearCart();
       navigate('/');
     } catch (error) {
-      console.error('Greška pri kreiranju narudžbe:', error);
+      console.error('Greška pri kreiranju narudžbe:', error.message);
       setError('Greška pri kreiranju narudžbe: Provjerite podatke i pokušajte ponovo.');
     }
   };
@@ -93,7 +100,7 @@ const CartPage = () => {
             <div key={item.productId} style={styles.itemRow}>
               <div style={styles.itemDetails}>
                 <span>{item.productName}</span>
-                <span>{item.price} eur</span>
+                <span>{item.price} kn</span>
               </div>
               <input
                 type="number"
@@ -107,7 +114,7 @@ const CartPage = () => {
               </button>
             </div>
           ))}
-          <div style={styles.total}>Ukupno: {totalAmount.toFixed(2)} eur</div>
+          <div style={styles.total}>Ukupno: {totalAmount.toFixed(2)} kn</div>
           <button style={styles.button} onClick={handleOrder}>
             Naruči
           </button>

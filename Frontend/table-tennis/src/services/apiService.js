@@ -56,13 +56,12 @@ export const getProductById = async (id) => {
   }
 };
 
-// Funkcija za kreiranje narudžbe
-export const createOrder = async (order) => {
+export const createOrder = async (orderData) => {
   try {
-    const response = await api.post('/order', order);
+    const response = await api.post('/order', orderData);
     return response.data;
   } catch (error) {
     console.error('Greška pri kreiranju narudžbe:', error.response?.data?.message || error.message);
-    throw new Error('Greška pri kreiranju narudžbe. Pokušajte ponovo.');
+    throw new Error(error.response?.data?.message || 'Greška pri kreiranju narudžbe. Pokušajte ponovo.');
   }
 };

@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{655361D9-5A06-46FA-AD32-84A7694F7727}|TableTennis.Repository\\TableTennis.Repository.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis.repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{655361D9-5A06-46FA-AD32-84A7694F7727}|TableTennis.Repository\\TableTennis.Repository.csproj|solutionrelative:tabletennis.repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2BA8EC3-478B-444C-971E-0A580501C8C7}|TableTennis\\TableTennis.WebApi.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2BA8EC3-478B-444C-971E-0A580501C8C7}|TableTennis\\TableTennis.WebApi.csproj|solutionrelative:tabletennis\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{405D9108-1E67-47B8-8414-EB3C65BA2E00}|TableTennis.Service\\TableTennis.Service.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis.service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{405D9108-1E67-47B8-8414-EB3C65BA2E00}|TableTennis.Service\\TableTennis.Service.csproj|solutionrelative:tabletennis.service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2BA8EC3-478B-444C-971E-0A580501C8C7}|TableTennis\\TableTennis.WebApi.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2BA8EC3-478B-444C-971E-0A580501C8C7}|TableTennis\\TableTennis.WebApi.csproj|solutionrelative:tabletennis\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{918FB330-ADAD-483E-9A6F-6864BF9300D3}|TableTennis.Mapper\\TableTennis.Mapper.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis.mapper\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{918FB330-ADAD-483E-9A6F-6864BF9300D3}|TableTennis.Mapper\\TableTennis.Mapper.csproj|solutionrelative:tabletennis.mapper\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{655361D9-5A06-46FA-AD32-84A7694F7727}|TableTennis.Repository\\TableTennis.Repository.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis.repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{655361D9-5A06-46FA-AD32-84A7694F7727}|TableTennis.Repository\\TableTennis.Repository.csproj|solutionrelative:tabletennis.repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2BA8EC3-478B-444C-971E-0A580501C8C7}|TableTennis\\TableTennis.WebApi.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B2BA8EC3-478B-444C-971E-0A580501C8C7}|TableTennis\\TableTennis.WebApi.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2BA8EC3-478B-444C-971E-0A580501C8C7}|TableTennis\\TableTennis.WebApi.csproj|solutionrelative:tabletennis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{918FB330-ADAD-483E-9A6F-6864BF9300D3}|TableTennis.Mapper\\TableTennis.Mapper.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis.mapper\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{918FB330-ADAD-483E-9A6F-6864BF9300D3}|TableTennis.Mapper\\TableTennis.Mapper.csproj|solutionrelative:tabletennis.mapper\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{655361D9-5A06-46FA-AD32-84A7694F7727}|TableTennis.Repository\\TableTennis.Repository.csproj|d:\\stolniteniswebshop\\backend\\tabletennis\\tabletennis.repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,8 +74,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "TableTennis\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis\\Controllers\\UserController.cs",
+              "RelativeToolTip": "TableTennis\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAswCkAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T16:18:53.489Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -91,20 +104,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "TableTennis.Repository\\UserRepository.cs",
               "ToolTip": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository\\UserRepository.cs",
               "RelativeToolTip": "TableTennis.Repository\\UserRepository.cs",
-              "ViewState": "AQIAAHgAAAAAAAAAAAAswI8AAAAAAAAA",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAYwI8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-05T16:16:31.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Repository.Common\\IUserRepository.cs",
               "RelativeDocumentMoniker": "TableTennis.Repository.Common\\IUserRepository.cs",
@@ -117,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "UserProfile.cs",
               "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Mapper\\UserProfile.cs",
               "RelativeDocumentMoniker": "TableTennis.Mapper\\UserProfile.cs",
@@ -130,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "OrderService.cs",
               "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service\\OrderService.cs",
               "RelativeDocumentMoniker": "TableTennis.Service\\OrderService.cs",
@@ -195,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "TableTennis\\Controllers\\OrderController.cs",
@@ -208,20 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "TableTennis\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis\\Controllers\\UserController.cs",
-              "RelativeToolTip": "TableTennis\\Controllers\\UserController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowC0AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T16:18:53.489Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis.Service.Common\\IUserService.cs",
               "RelativeDocumentMoniker": "TableTennis.Service.Common\\IUserService.cs",
@@ -273,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\StolniTenisWebShop\\Backend\\TableTennis\\TableTennis\\Program.cs",
               "RelativeDocumentMoniker": "TableTennis\\Program.cs",
