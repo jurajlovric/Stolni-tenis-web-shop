@@ -1,18 +1,16 @@
-// src/pages/ProductDetails.js
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getProductById } from '../services/apiService';
-import { useCart } from '../context/CartContext'; // Uvozimo useCart da možemo koristiti CartContext
+import { useCart } from '../context/CartContext';
 
 const ProductDetails = () => {
-  const { id } = useParams(); // Dohvaćamo ID proizvoda iz URL-a
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [error, setError] = useState('');
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
-  const { addToCart } = useCart(); // Dohvaćamo funkciju addToCart iz CartContexta
+  const { addToCart } = useCart();
 
-  // Dohvaćanje podataka o proizvodu po ID-u
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -27,53 +25,15 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
-  // Funkcija za dodavanje proizvoda u košaricu
-  const handleAddToCart = () => {
-    addToCart(product, quantity); // Dodajemo proizvod u košaricu
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    addToCart(product, quantity);
     alert(`Dodali ste ${quantity} komada proizvoda u košaricu.`);
-    navigate('/cart'); // Preusmjeravamo korisnika na stranicu s košaricom
-  };
-
-  // Stilovi za stranicu
-  const styles = {
-    container: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '20px',
-    },
-    image: {
-      width: '300px',
-      height: '300px',
-      objectFit: 'contain',
-      marginBottom: '20px',
-    },
-    details: {
-      textAlign: 'center',
-      marginBottom: '20px',
-    },
-    input: {
-      width: '50px',
-      padding: '5px',
-      marginRight: '10px',
-      textAlign: 'center',
-    },
-    button: {
-      padding: '10px 20px',
-      border: 'none',
-      borderRadius: '5px',
-      backgroundColor: '#007bff',
-      color: '#fff',
-      cursor: 'pointer',
-      transition: 'background-color 0.3s',
-    },
-    error: {
-      color: 'red',
-    },
+    navigate('/cart');
   };
 
   if (error) {
-    return <p style={styles.error}>{error}</p>;
+    return <p style={{ color: 'red' }}>{error}</p>;
   }
 
   if (!product) {
@@ -81,24 +41,22 @@ const ProductDetails = () => {
   }
 
   return (
-    <div style={styles.container}>
-      <img src={product.imageUrl} alt={product.name} style={styles.image} />
-      <div style={styles.details}>
-        <h2>{product.name}</h2>
-        <p>{product.description}</p>
-        <p>Cijena: {product.price} eur</p>
-      </div>
-      <div>
+    <div style={{ padding: '20px', textAlign: 'center' }}>
+      <img src={product.imageUrl} alt={product.name} style={{ width: '300px', height: '300px', objectFit: 'contain' }} />
+      <h2>{product.name}</h2>
+      <p>{product.description}</p>
+      <p>Cijena: {product.price} eur</p>
+      <form onSubmit={handleAddToCart}>
         <input
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-          style={styles.input}
+          style={{ margin: '10px', padding: '5px', width: '50px', textAlign: 'center' }}
         />
-        <button style={styles.button} onClick={handleAddToCart}>
+        <button type="submit" style={{ padding: '10px 20px', borderRadius: '5px', backgroundColor: '#007bff', color: '#fff' }}>
           Dodaj u košaricu
         </button>
-      </div>
+      </form>
     </div>
   );
 };

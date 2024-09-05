@@ -1,4 +1,3 @@
-// src/components/Login.js
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -12,10 +11,10 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Resetiraj grešku prilikom pokušaja prijave
+    setError('');
     try {
       await loginUserHandler(email, password);
-      navigate('/'); // Preusmjeri samo ako je prijava uspješna
+      navigate('/');
     } catch (err) {
       setError('Prijava nije uspjela. Provjerite podatke i pokušajte ponovo.');
     }
@@ -84,7 +83,7 @@ const Login = () => {
       </form>
       <span
         style={styles.registerLink}
-        onClick={() => navigate('/register')} // Dodaj gumb za navigaciju na registraciju
+        onClick={() => navigate('/register')}
       >
         Nemate račun? Registrirajte se ovdje.
       </span>

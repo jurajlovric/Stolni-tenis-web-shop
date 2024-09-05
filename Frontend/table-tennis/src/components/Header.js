@@ -1,15 +1,14 @@
-// src/components/Header.js
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
-  const { user, logoutUserHandler } = useAuth(); // Pravilno korištenje logoutUserHandler
+  const { user, logoutUserHandler } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     logoutUserHandler();
-    navigate('/login'); // Preusmjeri korisnika na stranicu za prijavu
+    navigate('/login');
   };
 
   return (
@@ -54,7 +53,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '10px',
-    marginLeft: 'auto', // Ovo će gurnuti sekciju desno
+    marginLeft: 'auto',
   },
   link: {
     color: '#fff',

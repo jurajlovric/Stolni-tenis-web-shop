@@ -1,4 +1,3 @@
-// src/components/Register.js
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -11,16 +10,14 @@ const Register = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Postavite roleId na vrijednost koju želite koristiti za nove korisnike
-  const defaultRoleId = 'b356d1ff-80fc-4713-a27f-b11f3e5a9230'; // Zamijenite s ID-jem role koju želite koristiti
+  const defaultRoleId = 'b356d1ff-80fc-4713-a27f-b11f3e5a9230';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Resetiraj grešku
+    setError('');
     try {
-      // Proslijedite roleId prilikom registracije
       await registerUserHandler(username, email, password, defaultRoleId);
-      navigate('/'); // Preusmjeri na početnu stranicu nakon uspješne registracije
+      navigate('/');
     } catch (err) {
       setError('Greška pri registraciji: ' + err.message);
     }

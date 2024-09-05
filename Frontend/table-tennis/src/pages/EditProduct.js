@@ -1,4 +1,3 @@
-// src/pages/EditProduct.js
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getProductById, updateProduct, getCategories } from '../services/apiService';

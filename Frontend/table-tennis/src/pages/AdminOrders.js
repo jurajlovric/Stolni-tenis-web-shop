@@ -1,4 +1,3 @@
-// src/pages/AdminOrders.js
 import React, { useEffect, useState } from 'react';
 import { getOrders } from '../services/apiService';
 
@@ -6,7 +5,6 @@ const AdminOrders = () => {
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState('');
 
-  // Funkcija za dohvaćanje narudžbi
   const fetchOrders = async () => {
     try {
       const fetchedOrders = await getOrders();
@@ -21,14 +19,13 @@ const AdminOrders = () => {
     fetchOrders();
   }, []);
 
-  // Stilovi za centriranje tablice
   const styles = {
     container: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       flexDirection: 'column',
-      minHeight: '80vh', // Za vertikalno centriranje
+      minHeight: '80vh',
       padding: '20px',
     },
     table: {

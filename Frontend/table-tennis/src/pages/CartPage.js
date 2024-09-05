@@ -1,13 +1,12 @@
-// src/pages/CartPage.js
 import React, { useState } from 'react';
-import { useCart } from '../context/CartContext'; // Koristite custom hook useCart
+import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { createOrder } from '../services/apiService';
-import { useAuth } from '../context/AuthContext'; // Koristimo useAuth umjesto AuthContext
+import { useAuth } from '../context/AuthContext';
 
 const CartPage = () => {
-  const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart(); // Koristite custom hook
-  const { user } = useAuth(); // Dohvat prijavljenog korisnika pomoću useAuth
+  const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart();
+  const { user } = useAuth();
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -18,7 +17,7 @@ const CartPage = () => {
       }
 
       const orderData = {
-        userId: user.userId, // Prosljeđivanje ID-ja prijavljenog korisnika
+        userId: user.userId,
         orderItems: cartItems.map((item) => ({
           productId: item.productId,
           quantity: item.quantity,
@@ -99,8 +98,8 @@ const CartPage = () => {
           {cartItems.map((item) => (
             <div key={item.productId} style={styles.itemRow}>
               <div style={styles.itemDetails}>
-                <span>{item.productName}</span>
-                <span>{item.price} eur</span> {/* Promijenjeno iz "kn" u "eur" */}
+                <span>{item.productName || item.name}</span>
+                <span>{item.price} eur</span>
               </div>
               <input
                 type="number"
@@ -114,7 +113,7 @@ const CartPage = () => {
               </button>
             </div>
           ))}
-          <div style={styles.total}>Ukupno: {totalAmount.toFixed(2)} eur</div> {/* Promijenjeno iz "kn" u "eur" */}
+          <div style={styles.total}>Ukupno: {totalAmount.toFixed(2)} eur</div>
           <button style={styles.button} onClick={handleOrder}>
             Naruči
           </button>

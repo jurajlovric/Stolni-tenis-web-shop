@@ -1,4 +1,3 @@
-// src/pages/DeleteProduct.js
 import React, { useState, useEffect } from 'react';
 import { getProducts, deleteProduct } from '../services/apiService';
 
@@ -6,7 +5,6 @@ const DeleteProduct = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState('');
 
-  // Dohvati sve proizvode pri učitavanju komponente
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -21,7 +19,6 @@ const DeleteProduct = () => {
     fetchProducts();
   }, []);
 
-  // Funkcija za brisanje proizvoda
   const handleDelete = async (productId) => {
     try {
       if (window.confirm('Jeste li sigurni da želite obrisati ovaj proizvod?')) {
@@ -35,7 +32,6 @@ const DeleteProduct = () => {
     }
   };
 
-  // Stilovi za stranicu
   const styles = {
     container: {
       maxWidth: '800px',

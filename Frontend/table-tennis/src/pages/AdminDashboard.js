@@ -1,17 +1,15 @@
-// src/pages/AdminDashboard.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
 
-  // Navigacija na različite stranice
   const handleAddProduct = () => {
     navigate('/add-product');
   };
 
   const handleEditProduct = () => {
-    navigate('/product-list-admin'); // Ispravljena putanja za uređivanje proizvoda
+    navigate('/product-list-admin');
   };
 
   const handleDeleteProduct = () => {
@@ -22,7 +20,6 @@ const AdminDashboard = () => {
     navigate('/adminorders');
   };
 
-  // Stilovi za gumb
   const buttonStyle = {
     padding: '10px 20px',
     margin: '10px',
@@ -34,7 +31,6 @@ const AdminDashboard = () => {
     transition: 'background-color 0.3s',
   };
 
-  // Stilovi za glavni kontejner
   const containerStyle = {
     textAlign: 'center',
     padding: '40px',

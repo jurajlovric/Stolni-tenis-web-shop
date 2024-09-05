@@ -1,4 +1,3 @@
-// src/pages/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -7,10 +6,8 @@ const Home = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
 
-  // Provjerava je li korisnik admin na temelju roleId
   const isAdmin = user?.roleId === '3af2c54a-6fe7-4b32-be9c-b6991fab5bdb';
 
-  // Stilizacija za gumb
   const buttonStyle = {
     padding: '10px 20px',
     margin: '10px',
@@ -43,7 +40,6 @@ const Home = () => {
           Košarica
         </button>
 
-        {/* Prikaz gumba za admina ako je korisnik admin */}
         {isAdmin && (
           <button
             style={adminButtonStyle}

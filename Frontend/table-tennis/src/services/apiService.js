@@ -1,12 +1,9 @@
-// src/services/apiService.js
 import axios from 'axios';
 
-// Kreiranje API instance
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Provjerite da URL odgovara vašem backendu
+  baseURL: 'http://localhost:5000/api',
 });
 
-// Funkcija za prijavu korisnika
 export const loginUser = async (email, password) => {
   try {
     const response = await api.post('/user/login', { email, password });
@@ -34,7 +31,6 @@ export const registerUser = async (username, email, password, roleId) => {
 };
 
 
-// Funkcija za dohvaćanje svih proizvoda
 export const getProducts = async () => {
   try {
     const response = await api.get('/product');
@@ -45,7 +41,6 @@ export const getProducts = async () => {
   }
 };
 
-// Funkcija za dohvaćanje proizvoda prema ID-u
 export const getProductById = async (id) => {
   try {
     const response = await api.get(`/product/${id}`);
@@ -68,7 +63,7 @@ export const createOrder = async (orderData) => {
 
 export const getOrders = async () => {
   try {
-    const response = await api.get('/order'); // Promijenjeno iz '/orders' u '/order'
+    const response = await api.get('/order');
     return response.data;
   } catch (error) {
     console.error('Greška pri dohvaćanju narudžbi:', error);
@@ -82,7 +77,7 @@ export const addProduct = async (productData) => {
 };
 
 export const getCategories = async () => {
-  const response = await api.get('/category'); // Pretpostavlja se da je ruta za dohvaćanje kategorija '/category'
+  const response = await api.get('/category');
   return response.data;
 };
 

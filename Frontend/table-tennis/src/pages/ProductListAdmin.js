@@ -1,4 +1,3 @@
-// src/pages/ProductListAdmin.js
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getProducts } from '../services/apiService';

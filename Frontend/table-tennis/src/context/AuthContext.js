@@ -1,4 +1,3 @@
-// src/context/AuthContext.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { loginUser, registerUser } from '../services/apiService';
 
@@ -25,9 +24,8 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await loginUser(email, password);
       if (response) {
-        // Dodajemo naziv uloge dohvaćen s backend-a
-        const roleName = await getRoleNameById(response.roleId); // Pretpostavimo da postoji funkcija koja dohvaća naziv uloge
-        const userWithRole = { ...response, roleName }; // Dodajemo naziv uloge korisničkom objektu
+        const roleName = await getRoleNameById(response.roleId);
+        const userWithRole = { ...response, roleName };
         setUser(userWithRole);
         localStorage.setItem('user', JSON.stringify(userWithRole));
       } else {
@@ -42,7 +40,7 @@ export const AuthProvider = ({ children }) => {
   const registerUserHandler = async (username, email, password, roleId) => {
     try {
       const response = await registerUser(username, email, password, roleId);
-      const roleName = await getRoleNameById(response.roleId); // Pretpostavimo da postoji funkcija koja dohvaća naziv uloge
+      const roleName = await getRoleNameById(response.roleId);
       const userWithRole = { ...response, roleName };
       setUser(userWithRole);
       localStorage.setItem('user', JSON.stringify(userWithRole));
@@ -57,13 +55,12 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('user');
   };
 
-  // Dodajte funkciju koja dohvaća naziv uloge na temelju roleId
 const getRoleNameById = async (roleId) => {
   try {
-    const response = await fetch(`/api/roles/${roleId}`); // Prilagodite URL prema vašoj API strukturi
+    const response = await fetch(`/api/roles/${roleId}`);
     if (response.ok) {
       const data = await response.json();
-      return data.roleName; // Pretpostavka da API vraća objekt s roleName
+      return data.roleName;
     } else {
       console.error('Failed to fetch role name:', response.statusText);
       return null;

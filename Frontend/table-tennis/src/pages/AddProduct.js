@@ -12,7 +12,6 @@ const AddProduct = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // Dohvaćanje svih kategorija pri učitavanju komponente
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -30,37 +29,34 @@ const AddProduct = () => {
   const handleAddProduct = async (e) => {
     e.preventDefault();
 
-    // Provjera je li cijena broj i je li ispravno postavljen `categoryId`
     if (!categoryId || categoryId === '') {
       setError('Odaberite kategoriju za proizvod.');
       return;
     }
 
-    // Pretpostavljamo da je categoryName već dohvaćen ili odabran s popisa
     const categoryName = categories.find(cat => cat.categoryId === categoryId)?.name || '';
 
     const productData = {
       name,
       description,
       price: parseFloat(price),
-      categoryId, // Prosljeđivanje točno odabranog `categoryId`
-      categoryName, // Dodajemo i CategoryName kako bismo ispunili zahtjeve backend-a
+      categoryId,
+      categoryName,
       imageUrl,
     };
 
-    console.log('Podaci koji se šalju:', productData); // Ispis podataka za provjeru
+    console.log('Podaci koji se šalju:', productData);
 
     try {
       await addProduct(productData);
       alert('Proizvod uspješno dodan!');
-      navigate('/admin-dashboard'); // Vraćanje na admin dashboard nakon dodavanja proizvoda
+      navigate('/admin-dashboard');
     } catch (err) {
       console.error('Greška pri dodavanju proizvoda:', err.response?.data || err.message);
       setError('Greška pri dodavanju proizvoda. Provjerite podatke i pokušajte ponovo.');
     }
   };
 
-  // Stilovi za stranicu
   const styles = {
     container: {
       maxWidth: '600px',

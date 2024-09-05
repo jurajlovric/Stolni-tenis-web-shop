@@ -1,12 +1,10 @@
-// src/pages/ProductList.js
 import React, { useEffect, useState } from 'react';
-import { getProducts } from '../services/apiService'; // Funkcija za dohvaćanje proizvoda
+import { getProducts } from '../services/apiService';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState('');
 
-  // Dohvati proizvode prilikom učitavanja stranice
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -21,7 +19,6 @@ const ProductList = () => {
     fetchProducts();
   }, []);
 
-  // Stilovi za stranicu proizvoda
   const styles = {
     container: {
       padding: '20px',
@@ -83,7 +80,7 @@ const ProductList = () => {
               <div style={styles.productPrice}>{product.price} eur</div>
               <button
                 style={styles.button}
-                onClick={() => window.location.href = `/product/${product.productId}`} // Navigacija na stranicu detalja proizvoda
+                onClick={() => window.location.href = `/product/${product.productId}`}
               >
                 Detalji
               </button>
